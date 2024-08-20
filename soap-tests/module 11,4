@@ -1,0 +1,8 @@
+Dodanie asercji "Schema Compliance" spowodowało, że testy zakończyły się niepowodzeniem, ponieważ ten typ
+asercji sprawdza, czy odpowiedzi zwracane przez webserwis są zgodne z określoną schemą XML. Schema XML definiuje zasady,
+według których XML powinien być skonstruowany, np. jakie typy danych mogą być używane w określonych elementach.
+
+W tym przypadku, test "Invalid Types" generuje zapytania z niepoprawnymi typami danych. Oznacza to, że dane wysyłane w
+ramach testu nie spełniają wymogów schematu, co powoduje, że odpowiedzi zwracane przez webserwis również nie spełniają tych wymogów.
+To jest przyczyną, dla której asercja "Schema Compliance" powoduje, że testy kończą się niepowodzeniem — odpowiedzi nie są zgodne z
+oczekiwaną strukturą i typami danych określonymi w schemacie XML.
